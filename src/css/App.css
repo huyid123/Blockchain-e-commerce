@@ -1,0 +1,9 @@
+/* Styles go here */
+
+* {
+    margin: 0;
+  }
+
+  .row > main {
+    width: 100%;
+  }
