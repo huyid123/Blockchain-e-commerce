@@ -1,5 +1,6 @@
 import { Remove } from '@material-ui/icons';
 import React, { Component } from 'react'
+import '../css/Product.css';
 
 export default class Products extends Component {
     convertMoney=(price)=>{
@@ -8,20 +9,26 @@ export default class Products extends Component {
     renderBuyButton=(item)=>{
         if(!item.purchased){
             return (
-              <button
-              style={{width:"100%"}}
-                name={item.id}
-                value={item.price}
-                onClick={(event) => {
-                  this.props.purchaseProduct(
-                    event.target.name,
-                    event.target.value
-                  );
-                }}
-                className="btn btn-primary"
-              >
-                Buy
-              </button>
+              <div class="snipcart-details top_brand_home_details">
+                <form action="#" method="post">
+                  <fieldset>
+                    <button
+                      style={{ width: "100%" }}
+                      name={item.id}
+                      value={item.price}
+                      onClick={(event) => {
+                        this.props.purchaseProduct(
+                          event.target.name,
+                          event.target.value
+                        );
+                      }}
+                      className="btn btn-info"
+                    >
+                      Buy
+                    </button>
+                  </fieldset>
+                </form>
+              </div>
             );
         }
     }
@@ -30,25 +37,49 @@ export default class Products extends Component {
         if(this.props.products){
             return this.props.products.map((item,index)=>{
                 return (
-                  <div
-                    // key={index}
-                    className="col-lg-4 product-box"
-                    style={{ height: "45vh", padding: "10px" }}
-                  >
-                    <div className="product-img" style={{ height: "70%",
-                    backgroundImage:"url(https://i.pinimg.com/originals/19/36/bd/1936bdd2d500028a5c1113e5ed90b732.jpg)" }}>                      
-                    </div>
-                    <div
-                      className="product-detail text-center"
-                      style={{ height: "30%" }}
-                    >
-                      <div className="product-id" style={{ opacity: 0}}>{item.id.toString()}</div>
-                      <div className="product-name">{item.name}</div>
-                      <div className="product-price">
-                         {this.convertMoney(item.price)} Eth
+                  <div class="col-md-4 top_brand_left">
+                    <div class="hover14 column">
+                      <div class="agile_top_brand_left_grid">
+                        <div class="agile_top_brand_left_grid1">
+                          <figure>
+                            <div class="snipcart-item block">
+                              <div class="snipcart-thumb">
+                                <div
+                                  className="product-img"
+                                  style={{
+                                    height: "70%",
+                                    display: "flex"
+                                  }}
+                                ><img src={require('../Image/1.png')}/></div>
+                                <div
+                                  className="product-id"
+                                  style={{ opacity: 0 }}
+                                >
+                                  {item.id.toString()}
+                                </div>
+                                <p>{item.name}</p>
+                                <h4>{this.convertMoney(item.price)} Eth</h4>
+                                <div className="product-owner">
+                                  {item.owner}
+                                </div>
+                              </div>
+                              <div class="snipcart-details top_brand_home_details">
+                                <form action="#" method="post">
+                                  <fieldset>
+                                    <input
+                                      type="submit"
+                                      name="submit"
+                                      value="Add to cart"
+                                      class="button"
+                                    />
+                                  </fieldset>
+                                </form>
+                              </div>
+                            </div>
+                          </figure>
+                          {this.renderBuyButton(item)}
+                        </div>
                       </div>
-                      <div className="product-owner">{item.owner}</div>
-                        {this.renderBuyButton(item)}
                     </div>
                   </div>
                 );
@@ -61,7 +92,7 @@ export default class Products extends Component {
     render() {
         return (
           <div className="my-2">
-            <h1>Product</h1>
+            <h1 style={{color: "brown"}}>Product</h1>
             <div className="container">
                 <div className="row">
                     {this.renderProductBox()}

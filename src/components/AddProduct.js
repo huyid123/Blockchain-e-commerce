@@ -15,12 +15,6 @@ class AddProduct extends React.Component {
     e.preventDefault();
     const name = this.productName.value;
     const price = window.web3.utils.toWei(this.productPrice.value.toString(), "Ether");
-    try{
-      if(price == "") throw "Null"
-      if(price < 0 || price > 100) throw "Too big"
-    }catch(price){
-      alert("please input price!")
-    }
     this.props.createProduct(name, price);
   }
 
@@ -48,7 +42,7 @@ class AddProduct extends React.Component {
               animation={true}
             >
               <Modal.Header closeButton>
-                <Modal.Title>Add Product</Modal.Title>
+                <Modal.Title>ADD PRODUCT</Modal.Title>
               </Modal.Header>
               <Modal.Body>
                 <form>
@@ -95,9 +89,9 @@ class AddProduct extends React.Component {
                 </Button>
               </Modal.Footer>
             </Modal>
-            <div className="d-flex">
-              Add Product 
-             <AddBoxIcon onClick={this.handleShow} style={{cursor:"pointer"}}/>
+            <div className="Add-Product">
+            <h2 style={{color: "brown"}}>ADD PRODUCT</h2>
+             <AddBoxIcon onClick={this.handleShow} className="Add" style={{cursor:"pointer"}}/>
             </div>
             <p>&nbsp;</p>
           

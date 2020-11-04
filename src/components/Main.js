@@ -23,7 +23,7 @@ class Main extends Component {
             </div>
         </nav>          
             {/* slide 1*/}
-        <Carousel>            
+            <Carousel>            
             <Carousel.Item>
             <div className="slide">
               <img
@@ -77,7 +77,6 @@ class Main extends Component {
             </div> 
             </Carousel.Item>                      
         </Carousel>
-        
         
       </div>
     );
