@@ -1,7 +1,10 @@
 # Blockchain-e-commerce
 ## Available Scripts
 
+First, make sure you have ganache installed.
+
 In the project directory, you can run:
+
 ### `npm install`
 
 Open `ganache.exe`, click `NEW WORKSPACE` => Add new project => choose `truffle-config.js` => `save`.
