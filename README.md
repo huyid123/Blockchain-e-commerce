@@ -4,11 +4,11 @@
 In the project directory, you can run:
 ### `npm install`
 
-Open ganache.exe, click NEW WORKSPACE => Add new project => choose truffle-config.js => save.
+Open `ganache.exe`, click `NEW WORKSPACE` => Add new project => choose `truffle-config.js` => `save`.
 
 Can test ganache with 'npx truffle console' and use command truffle. 
 
-### 'npx truffle compile'
+### `npx truffle compile`
 
 ### `npx truffle migrate`
 
